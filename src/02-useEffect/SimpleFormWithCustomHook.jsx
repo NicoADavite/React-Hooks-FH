@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "../hooks/useForm";
 
 export const SimpleFormWithCustomHook = () => {
   const initialValue = {
     username: "",
     email: "",
-    password: ""
+    password: "",
   };
   const { formState, handleChange, handleReset } = useForm(initialValue);
-  const { username, email, password} = formState;
+  const { username, email, password } = formState;
   return (
     <div>
       <h1 className="mb-3">Formulario Simple</h1>
@@ -39,7 +39,9 @@ export const SimpleFormWithCustomHook = () => {
         onChange={handleChange}
       />
 
-      <button className="btn btn-danger form-control" onClick={handleReset}>Borrar</button>
+      <button className="btn btn-danger form-control" onClick={handleReset}>
+        Borrar
+      </button>
     </div>
   );
 };

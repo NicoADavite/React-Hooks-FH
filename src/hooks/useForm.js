@@ -4,8 +4,8 @@ export const useForm = (initialValue) => {
   const [formState, setFormState] = useState(initialValue);
 
   const handleReset = () => {
-    setFormState(initialValue)
-  }
+    setFormState(initialValue);
+  };
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -14,7 +14,10 @@ export const useForm = (initialValue) => {
       [name]: value,
     });
   };
+
+    
   return {
+    ...formState,
     formState,
     handleChange,
     handleReset

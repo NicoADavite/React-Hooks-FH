@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {Message} from "./Message"
+import { Message } from "./Message";
 
 export const SimpleForm = () => {
   const [formState, setFormState] = useState({
@@ -9,15 +9,15 @@ export const SimpleForm = () => {
   const { username, email } = formState;
 
   useEffect(() => {
-    console.log("me renderizo por primera vez")
+    console.log("me renderizo por primera vez");
   }, []);
 
   useEffect(() => {
-    console.log("me renderizo cuando cambia el formState")
+    console.log("me renderizo cuando cambia el formState");
   }, [formState]);
 
   useEffect(() => {
-    console.log("me renderizo cuando cambia el email")
+    console.log("me renderizo cuando cambia el email");
   }, [email]);
 
   const handleChange = ({ target }) => {
@@ -63,10 +63,9 @@ export const SimpleForm = () => {
         </div>
         <button className="btn btn-success">Enviar</button>
       </form>
-      {
-        username === "nicodavite1998" && 
+      {username === "nicodavite1998" && (
         <Message msg={"Usuario ya registrado"} />
-      }
+      )}
     </>
   );
 };
